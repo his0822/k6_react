@@ -2,6 +2,7 @@ import './App.css';
 import MainhHeader from './01/MainHeader';
 import Hello from './01/Hello';
 import Bye from './01/Bye';
+import MyClock from './01_1/MyClock';
 
 function App() {
   return (
@@ -10,9 +11,12 @@ function App() {
     <div className="App">
       {/* class 대신에 className 으로 작성 */}
       <Hello />
+      <Bye />
       <MainhHeader />
       {/* <MainhHeader />      */}
       <Bye />
+      <Hello />
+      <MyClock />
      </div>
     </>
   );
