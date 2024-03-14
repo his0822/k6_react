@@ -6,11 +6,11 @@ import App from './App'; // "./App" == "./App.js"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />  
-    {/*<App>은 내가 만든 태그(컴포넌트 = 사용자정의 태그), 반드시 끝에 /를 붙여서 종료해야함 */}
+    // {/*<App>은 내가 만든 태그(컴포넌트 = 사용자정의 태그), 반드시 끝에 /를 붙여서 종료해야함 */}
 
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

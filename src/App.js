@@ -1,30 +1,45 @@
-import './App.css';
-import MainhHeader from './01/MainHeader';
-import Hello from './01/Hello';
-import Bye from './01/Bye';
-import MyClock from './01_1/MyClock';
+import { AiOutlineHome } from "react-icons/ai";
+import HelloCss from "./02/HelloCss";
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <> 
-    {/* div로 전체를 묶어야 하는데, 태그 내부를 생략하고 <>만 작성해도 됨 */}
-    <div className="App">
-      {/* class 대신에 className 으로 작성 */}
-      <Hello />
-      <Bye />
-      <MainhHeader />
-      {/* <MainhHeader />      */}
-      <Bye />
-      <Hello />
-      <MyClock />
-     </div>
-    </>
+    <div  className="flex flex-col 
+                  w-full max-w-screen-xl
+                  h-screen
+                  mx-auto
+                  overscroll-y-auto" >
+      <header className="flex justify-between
+                      h-20
+                      bg-yellow-500
+                      items-center
+                      p-10
+                      text=xl 
+                      font-bold
+                      text-indigo-600
+                      
+                      ">
+        <div>리액트실습</div>
+        <div><AiOutlineHome />
+          {/* <Homeicon /> */}
+        </div>
+      </header>
+      <main className="grow" >
+        <div className="flex justify-center
+                       items-center
+                       h-full 
+                       ">
+        <HelloCss />
+        </div>
+      </main>
+      <footer className="flex justify-center
+                      items-center
+                      text-
+                      bg-yellow-600
+                      h-20
+                      "
+      > © 2024 kimkyungmin. All rights reserved.
+      </footer>
+    </div>
   );
 }
-
-//화살표 함수로 작성가능
-// const App = () => {
-//   return();
-// }
-
-export default App; //자바스크립트의 모듈형 함수이기 때문에 import export 형태를 갖추어야 함
