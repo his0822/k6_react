@@ -1,6 +1,8 @@
 import { AiOutlineHome } from "react-icons/ai";
-import HelloCss from "./02/HelloCss";
+// import HelloCss from "./02/HelloCss";
 import "./App.css";
+// import MyDiv1 from "./03_1/MyDiv1";
+import MyListMain from "./04/MyListMain";
 
 export default function App() {
   return (
@@ -24,18 +26,22 @@ export default function App() {
           {/* <Homeicon /> */}
         </div>
       </header>
-      <main className="grow" >
-        <div className="flex justify-center
+      <main className="grow flex 
+                      flex-col
+                      justify-center
+                      items-center
+                      ">
+        {/* <div className="flex justify-center
                        items-center
                        h-full 
-                       ">
-        <HelloCss />
-        </div>
+                       "> */}
+        <MyListMain />
+        
+        {/* </div> */}
       </main>
       <footer className="flex justify-center
                       items-center
-                      text-
-                      bg-yellow-600
+                     bg-yellow-600
                       h-20
                       "
       > © 2024 kimkyungmin. All rights reserved.
