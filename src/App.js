@@ -1,51 +1,50 @@
-import { AiOutlineHome } from "react-icons/ai";
-// import HelloCss from "./02/HelloCss";
-import "./App.css";
-// import MyDiv1 from "./03_1/MyDiv1";
-import MyListMain from "./04/MyListMain";
+import './App.css';
+import { FaHome } from "react-icons/fa";
 
-export default function App() {
+// import MainHeader from './01/MainHeader';
+// import Hello from './01/Hello'; 
+// import MyClock from './01_1/MyClock';
+// import HelloCss from './02/HelloCss';
+// import MyDiv1 from './03_1/MyDiv1';
+import MyListMain from './04/MyListMain';
+import BoxOfficeTb from './05/BoxOfficeTb';
+
+function App() {
+
   return (
-    <div  className="flex flex-col 
-                  w-full max-w-screen-xl
-                  h-screen
-                  mx-auto
-                  overscroll-y-auto" >
-      <header className="flex justify-between
-                      h-20
-                      bg-yellow-500
-                      items-center
-                      p-10
-                      text=xl 
-                      font-bold
-                      text-indigo-600
-                      
-                      ">
+    <div className='flex flex-col 
+                    w-full max-w-screen-xl 
+                    h-screen
+                    mx-auto
+                    overscroll-y-auto
+                    '>
+      <header className='flex justify-between items-center
+                         h-20 p-10 
+                         text-xl font-bold text-blue-800
+                         bg-slate-200
+                        '>
         <div>리액트실습</div>
-        <div><AiOutlineHome />
-          {/* <Homeicon /> */}
-        </div>
+        <div><FaHome className='text-2xl text-black'/></div>
       </header>
-      <main className="grow flex 
-                      flex-col
-                      justify-center
-                      items-center
-                      ">
-        {/* <div className="flex justify-center
-                       items-center
-                       h-full 
-                       "> */}
-        <MyListMain />
-        
-        {/* </div> */}
+      <main className='grow flex flex-col 
+                            justify-center items-center 
+                      '>
+          <BoxOfficeTb />
       </main>
-      <footer className="flex justify-center
-                      items-center
-                     bg-yellow-600
-                      h-20
-                      "
-      > © 2024 kimkyungmin. All rights reserved.
+      <footer className='flex justify-center items-center
+                          h-20 bg-slate-800
+                          text-base text-white'>
+          ⓒ 2024 KimKyungMin. All right reserved. 
       </footer>
     </div>
   );
 }
+
+
+//화살표 함수로 작성가능
+// const App = () => {
+
+//   return ();
+// }
+
+export default App;
