@@ -1,6 +1,7 @@
 
+import MyList from "./MyList" ;
 import listData from "./MyListData.json"
-import MyList from "./MyList";
+
 export default function MyListMain() {
   console.log(listData)
 
