@@ -202,6 +202,26 @@
         "audiAcc": "1157952",
         "scrnCnt": "175",
         "showCnt": "208"
+      },
+      {
+        "rnum": "11",
+        "rank": "11",
+        "rankInten": "0",
+        "rankOldAndNew": "OLD",
+        "movieCd": "202480088",
+        "movieNm": "건국전쟁2",
+        "openDt": "2024-02-01",
+        "salesAmt": "36644851",
+        "salesShare": "0.7",
+        "salesInten": "20083544",
+        "salesChange": "121.3",
+        "salesAcc": "10768326355",
+        "audiCnt": "3812",
+        "audiInten": "1905",
+        "audiChange": "99.9",
+        "audiAcc": "1157952",
+        "scrnCnt": "175",
+        "showCnt": "208"
       }
     ]
   }
