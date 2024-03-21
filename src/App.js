@@ -1,3 +1,4 @@
+// import MyClock from './01_1/MyClock';
 import './App.css';
 import { FaHome } from "react-icons/fa";
 
@@ -6,9 +7,12 @@ import { FaHome } from "react-icons/fa";
 // import MyClock from './01_1/MyClock';
 // import HelloCss from './02/HelloCss';
 // import MyDiv1 from './03_1/MyDiv1';
-import MyListMain from './04/MyListMain';
-import BoxOfficeTb from './05/BoxOfficeTb';
-import Lotto from './06/Lotto';
+// import MyListMain from './04/MyListMain';
+// import BoxOfficeTb from './05/BoxOfficeTb';
+// import Lotto from './06/Lotto';
+// import FoodCard from './07/FoodCard';
+// import FoodMain from './07/FoodMain';
+import MyClock2 from './08/MyClock2';
 
 function App() {
 
@@ -31,7 +35,10 @@ function App() {
                             justify-center items-center 
                       '>
           {/* <BoxOfficeTb /> */}
-          <Lotto />
+          {/* <Lotto /> */}
+          {/* <FoodCard /> */}
+          {/* <FoodMain /> */}  
+          <MyClock2 />
       </main>
       <footer className='flex justify-center items-center
                           h-20 bg-slate-800
