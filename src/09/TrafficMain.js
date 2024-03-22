@@ -58,7 +58,7 @@ console.log("rawdata:",tdata);
         let tm = tdata.filter(item => item.사고유형_대분류 === selC1)
                         .map(item => item.사고유형_중분류);
         setC2(tm);
-        
+        setSelC2('');
         setInfo('');
 
 
