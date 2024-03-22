@@ -12,6 +12,7 @@ function MyClockTime2() {
     console.log("[]=>", currentTime)
 
     return ()=>{clearInterval(t)}
+    
 
   },[]);
 
@@ -24,7 +25,7 @@ function MyClockTime2() {
 
   return (
     <h1 className="font-bold text-2xl">
-        현재시각  {currentTime.toLocaleTimeString()}
+        {/* 현재시각  {currentTime.toLocaleTimeString()} */}
     </h1>
   );
 }
