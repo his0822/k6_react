@@ -13,7 +13,11 @@ import { FaHome } from "react-icons/fa";
 // import FoodCard from './07/FoodCard';
 // import FoodMain from './07/FoodMain';
 // import MyClock2 from './08/MyClock2';
-import TrafficMain from './09/TrafficMain';
+// import TrafficMain from './09/TrafficMain';
+// import RefVal from './10/RefVal';
+// import Refinput from './10/Refinput';
+import BoxOffice  from './05/BoxOffice';
+
 
 function App() {
 
@@ -41,7 +45,10 @@ function App() {
           {/* <FoodMain /> */}  
           {/* <MyClock2 /> */}
           {/* <MyClock /> */}
-          <TrafficMain />
+          {/* <TrafficMain /> */}
+          {/* <RefVal />/ */}
+          {/* <Refinput />/ */}
+          <BoxOffice />
       </main>
       <footer className='flex justify-center items-center
                           h-20 bg-slate-800
