@@ -1,9 +1,12 @@
-import cimg from "./myclock_remove.png";
+import clockImg from './myclock.png' ;
 
 function MyClockImage() {
-    return (
-        <img src={cimg} alt="ClockImg" />
-    );
+  return (
+    <div style={{margin:"50px 10px"}}>
+      <img src={clockImg} alt="시계" 
+           style={{width:"300px", height:"300px"}}/>
+    </div>
+  )
 }
 
-export default MyClockImage;
+export default MyClockImage ;

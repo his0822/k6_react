@@ -1,6 +1,7 @@
 
 import './App.css';
 import { FaHome } from "react-icons/fa";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 // import MainHeader from './01/MainHeader';
 // import Hello from './01/Hello'; 
@@ -9,23 +10,29 @@ import { FaHome } from "react-icons/fa";
 // import MyDiv1 from './03_1/MyDiv1';
 // import MyListMain from './04/MyListMain';
 // import BoxOfficeTb from './05/BoxOfficeTb';
-// import Lotto from './06/Lotto';
+import Lotto from './06/Lotto';
 // import FoodCard from './07/FoodCard';
-// import FoodMain from './07/FoodMain';
-// import MyClock2 from './08/MyClock2';
+import FoodMain from './07/FoodMain';
+import MyClock2 from './08/MyClock2';
 // import TrafficMain from './09/TrafficMain';
 // import RefVal from './10/RefVal';
 // import Refinput from './10/Refinput';
-// import BoxOffice  from './05/BoxOffice';
+import BoxOffice  from './05/BoxOffice';
 // import GallaryCard from './11/GallaryCard';
-// import GallaryMain from './11/GallaryMain';
+import GallaryMain from './11/GallaryMain';
 // import FestivalMain from './12/FestivalMain';
 import Festival_s from './12/Festival_s';
+// import RouteMain from './13/RouteMain';
+import Frcst from './14/Frcst';
+import UltraSrtFcrt from './14/UltraSrtFcrt';
+import VilageFcrt from './14/VilageFcrt';
+
 
 
 function App() {
 
   return (
+    <BrowserRouter>
     <div className='flex flex-col 
                     w-full max-w-screen-xl 
                     h-screen
@@ -38,11 +45,40 @@ function App() {
                          bg-slate-200
                         '>
         <div>리액트실습</div>
-        <div><FaHome className='text-2xl text-black'/></div>
+        <div className='flex justify-end items-center'>
+          <div className='mx-2 p-2 rounded-md 
+                             hover:bg-blue-900 hover:text-white'>
+              <Link to='/frcst'>예보</Link>
+            </div>
+            <div className='mx-2 p-2 rounded-md 
+                             hover:bg-blue-900 hover:text-white'>
+              <Link to='/festival'>축제</Link>
+            </div>
+            <div className='mx-2 p-2 rounded-md 
+                             hover:bg-blue-900 hover:text-white'>
+              <Link to='/gallery'>사진</Link>
+            </div>
+            <div className='mx-2 p-2 rounded-md 
+                             hover:bg-blue-900 hover:text-white'>
+              <Link to='/food'>푸드마켓</Link>
+            </div>
+            <div className='mx-2 p-2 rounded-md 
+                             hover:bg-blue-900 hover:text-white'>
+              <Link to='/box'>박스오피스</Link>
+            </div>
+            <div className='mx-2 p-2 rounded-md 
+                             hover:bg-blue-900 hover:text-white'>
+              <Link to='/lotto'>로또</Link>
+            </div>
+            <Link to='/'>
+              <FaHome className='text-2xl text-black' />
+            </Link>
+          </div>
       </header>
       <main className='grow flex flex-col 
                             justify-center items-center 
                       '>
+
           {/* <BoxOfficeTb /> */}
           {/* <Lotto /> */}
           {/* <FoodCard /> */}
@@ -56,14 +92,27 @@ function App() {
           {/* <GallaryCard /> */}
           {/* <GallaryMain /> */}
           {/* <FestivalMain /> */}
-          <Festival_s />
+          {/* <Festival_s /> */}
+
+          <Routes>
+            <Route path='/' element={<MyClock2 />} />
+            <Route path='/lotto' element={<Lotto />} />
+            <Route path='/box' element={<BoxOffice />} />
+            <Route path='/food' element={<FoodMain />} />
+            <Route path='/gallery' element={<GallaryMain />} />
+            <Route path='/festival_s' element={<Festival_s />} />
+            <Route path='/frcst' element={<Frcst />} />
+            <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcrt />} />
+            <Route path='/vilage/:dt/:area/:x/:y' element={<VilageFcrt />} />
+          </Routes>
       </main>
       <footer className='flex justify-center items-center
                           h-20 bg-slate-800
                           text-base text-white'>
-          ⓒ 2024 KimKyungMin. All right reserved. 
+          ⓒ 2024 HwangInSang. All right reserved. 
       </footer>
     </div>
+    </BrowserRouter>
   );
 }
 

@@ -5,12 +5,12 @@ function MyClock2() {
 
     return(
         <div className="w-full h-full
-                        ">
+                    flex flex-col justify-center items-center">
             <MyClockImage2 />
             <MyClockTime2 />
         </div>
     );
    
-}
+}; 
 
-export default MyClock2;
+export default MyClock2; 

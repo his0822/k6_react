@@ -1,13 +1,15 @@
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { CgLoadbar } from "react-icons/cg";
 
-export default function BoxOfficeTbody({boxList,setSelMv}) {
-
+export default function BoxOfficeTbody({boxList, setSelMv}) {
+  
   const handleClick = (mv) => {
     console.log(mv)
+    // 할당연산자로 state 변수 변경 불가 => 업데이트함수 변경
+    // selMv = mv ;
     setSelMv(mv) ;
   }
-  
+
   const trs = boxList.map( item => 
     <tr key={item.movieCd} 
         onClick={() => {handleClick(item)}}

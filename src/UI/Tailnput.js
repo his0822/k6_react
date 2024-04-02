@@ -1,4 +1,4 @@
-export default function TailInput({type,inputRef, ph, handleChange}) {
+export default function Tailnput({type,inputRef, ph, handleChange}) {
   return (
     <input type={type}  
            ref={inputRef}

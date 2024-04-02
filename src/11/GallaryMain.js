@@ -1,5 +1,5 @@
 import TailButton from "../UI/TailButton"
-import Tailinput from "../UI/Tailinput"
+import TailInput from "../UI/TailInput"
 import GallaryCard from "./GallaryCard";
 import { useState,useRef, useEffect } from "react";
 
@@ -34,7 +34,7 @@ export default function GallaryMain() {
             // });
 
 
-        // setTags(tm);
+        setTags(tm);
     },[tdata]);
 
     const getData = (w) => {
@@ -77,7 +77,7 @@ export default function GallaryMain() {
                         bg-slate-100
                         md:grid-cols-3 gap-4">
             <div className="p-2">
-                <Tailinput type="text"
+                <TailInput type="text"
                             inputRef = {keyword}
                             ph = "키워드입력"
                              />
