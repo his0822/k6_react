@@ -24,8 +24,11 @@ import GallaryMain from './11/GallaryMain';
 import Festival_s from './12/Festival_s';
 // import RouteMain from './13/RouteMain';
 import Frcst from './14/Frcst';
-import UltraSrtFcrt from './14/UltraSrtFcrt';
-import VilageFcrt from './14/VilageFcrt';
+// import UltraSrtFcrt from './14/UltraSrtFcrt';
+// import VilageFcrt from './14/VilageFcrt';
+import FrcstList from './14/FrcstList';
+import RecoilMain from './15/RecoilMain';
+
 
 
 
@@ -44,15 +47,21 @@ function App() {
                          text-xl font-bold text-blue-800
                          bg-slate-200
                         '>
-        <div>리액트실습</div>
+        <div className='font-bold text-cyan-700'>리액트실습</div>
         <div className='flex justify-end items-center'>
+       
+           <div className='mx-2 p-2 rounded-md 
+                             hover:bg-blue-900 hover:text-white'>
+              <Link to='/recoilmain'>리코일</Link>
+            </div>
+          
           <div className='mx-2 p-2 rounded-md 
                              hover:bg-blue-900 hover:text-white'>
               <Link to='/frcst'>예보</Link>
             </div>
             <div className='mx-2 p-2 rounded-md 
                              hover:bg-blue-900 hover:text-white'>
-              <Link to='/festival'>축제</Link>
+              <Link to='/festival_s'>축제</Link>
             </div>
             <div className='mx-2 p-2 rounded-md 
                              hover:bg-blue-900 hover:text-white'>
@@ -95,6 +104,8 @@ function App() {
           {/* <Festival_s /> */}
 
           <Routes>
+            {/* <Route path='/recoil' element={<Recoil1 />} /> */}
+            <Route path='/recoilmain' element={<RecoilMain />} />
             <Route path='/' element={<MyClock2 />} />
             <Route path='/lotto' element={<Lotto />} />
             <Route path='/box' element={<BoxOffice />} />
@@ -102,8 +113,10 @@ function App() {
             <Route path='/gallery' element={<GallaryMain />} />
             <Route path='/festival_s' element={<Festival_s />} />
             <Route path='/frcst' element={<Frcst />} />
-            <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcrt />} />
-            <Route path='/vilage/:dt/:area/:x/:y' element={<VilageFcrt />} />
+            {/* <Route path='/ultra/:dt/:area/:x/:y' element={<UltraSrtFcrt />} />
+            <Route path='/vilage/:dt/:area/:x/:y' element={<VilageFcrt />} /> */}
+            <Route path='/flist' element={<FrcstList />} />
+
           </Routes>
       </main>
       <footer className='flex justify-center items-center

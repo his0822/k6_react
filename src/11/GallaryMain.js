@@ -72,7 +72,7 @@ export default function GallaryMain() {
 
   return (
     <div className="w-10/12 flex flex-col
-                    h-full justify-start items-center">
+                    h-full justify-start items-center m-3">
         <div className="w-full grid grid-cols-1 
                         bg-slate-100
                         md:grid-cols-3 gap-4">

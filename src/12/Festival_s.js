@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import Festival from "./Festival";
+import GallaryCard from "../11/GallaryCard";
+
 // import Festival from "./Festival";
 
 export default function Festival_s() {
@@ -16,7 +17,7 @@ const handleSelGu=()=>{
     console.log("selRef=",selRef.current.value); 
     let tm = tdata.filter((item) => item.GUGUN_NM === selRef.current.value)
                 .map(item =>
-                    <Festival key={item.UC_SEQ}
+                    <GallaryCard key={item.UC_SEQ}
                         imgUrl={item.MAIN_IMG_NORMAL} 
                         title={item.TITLE}
                         ptitle={item.USAGE_DAY_WEEK_AND_TIME}
@@ -25,7 +26,7 @@ const handleSelGu=()=>{
                         )                
     setCardtags(tm);
     
-    // console.log(tm); 
+    console.log(tm); 
     // setSelNames(tm);
 }
 
@@ -77,12 +78,12 @@ const handleSelGu=()=>{
   useEffect(() => {
     if (!guname) return;
     // console.log(guname);
-    const tm = guname.map((item) => {
+    const tm = guname.map((item) => 
 
-        return (
+        
             <option value={item} key={item}>{item}</option>
-            )
-    });
+            
+    );
     
     setOpTags(tm)
 

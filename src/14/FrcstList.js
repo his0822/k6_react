@@ -1,32 +1,36 @@
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useState, useEffect,useRef} from "react";
 import TailSelect from "../UI/TailSelect";
 import getcode from "./getcode.json" ;
 
-export default function UltraSrtFcst() {
-  const dt = useParams().dt;
-  const area = useParams().area;
-  const x = useParams().x;
-  const y = useParams().y;
-  const gubun = '초단기예보';
-  //select 박스 옵션
+export default function FrcstList() {
+    const [queryParams] = useSearchParams();
+    const dt = queryParams.get('dt')
+    const area = queryParams.get('area')
+    const x = queryParams.get('x')
+    const y = queryParams.get('y')
+    const gubun = queryParams.get('gubun')
+
+    // console.log(dt, area, x, y, gubun)
+
+     //select 박스 옵션
   const ops = getcode.filter(item => item["예보구분"] === gubun ) 
-                      .map(item => `${item["항목명"]}(${item["항목값"]})`)
-  ;
-  const itemRef = useRef()
+  .map(item => `${item["항목명"]}(${item["항목값"]})`)
+;
+const itemRef = useRef()
 
-  //fetch data state 변수로 저장
-  const [tdata, setTdata] = useState([]);
+//fetch data state 변수로 저장
+const [tdata, setTdata] = useState([]);
 
-  //화면에 표시되는 테이블 tr저장
-  const [trtags, setTrtags] = useState([]);
+//화면에 표시되는 테이블 tr저장
+const [trtags, setTrtags] = useState([]);
 
-  //select 박스 선택값
-  const [selitemName, setSelItemName] = useState();
-  const [selitem, setSelItem] = useState();
+//select 박스 선택값
+const [selitemName, setSelItemName] = useState();
+const [selitem, setSelItem] = useState();
 
-  //select 박스 항목 선택
-  const handleItem = () =>{
+ //select 박스 항목 선택
+ const handleItem = () =>{
     if (itemRef.current.value === '') {
       alert('항목을 선택하세요.');
       itemRef.current.focus();
@@ -38,28 +42,37 @@ export default function UltraSrtFcst() {
     setSelItem(itemRef.current.value.split('(')[1].replace(')',''));
   }
 
-  //fetch 함수
-  const getData = async (url) => {
+   //fetch 함수
+   const getData = async (url) => {
     const resp = await fetch(url);
     const data = await resp.json();
 
     setTdata(data.response.body.items.item);
   }
 
+
+  
   //데이터가져오기
   useEffect(() => {
-    let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?`;
-    url = url + `serviceKey=${process.env.REACT_APP_APIKEY}`;
-    url = url + `&pageNo=1&numOfRows=1000&dataType=json&base_date=${dt}&base_time=0630&nx=${x}&ny=${y}`;
+    let url;
+    
+    if(gubun == '초단기예보'){
+        url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?`;
+        url = url + `serviceKey=${process.env.REACT_APP_APIKEY}`;
+        url = url + `&pageNo=1&numOfRows=1000&dataType=json&base_date=${dt}&base_time=0500&nx=${x}&ny=${y}`;
+    }else if(gubun == '단기예보' ){
+        url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?`;
+        url = url + `serviceKey=${process.env.REACT_APP_APIKEY}`;
+        url = url + `&pageNo=1&numOfRows=1000&dataType=json&base_date=${dt}&base_time=0500&nx=${x}&ny=${y}`;
+    }
 
     // console.log(url)
     //fetch 함수
     getData(url);
   }, []);
 
-  //tdata가 저장되었을때 
   useEffect(() => {
-    console.log(selitem)
+    // console.log(selitem)
     let tm = tdata.filter(item => item["category"] ===selitem )
             .map(item =>
             <tr key={item.fcstDate + item.fcstTime}
